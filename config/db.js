@@ -9,4 +9,9 @@ const pool = new Pool({
   port: process.env.PG_PORT,
 });
 
+pool.connect((err) => {
+  if (err) throw err;
+  console.log("db connected sucessfully");
+});
+
 module.exports = pool;
